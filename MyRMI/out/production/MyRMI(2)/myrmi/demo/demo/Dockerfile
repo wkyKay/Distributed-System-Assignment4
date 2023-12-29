@@ -2,7 +2,7 @@
 FROM openjdk:8-jdk-alpine
 
 # Copy the client classes into the image
-COPY . .
+COPY ./src/main/java/myrmi/demo/demo /app/demo/demo
 
 # Set the working directory
 WORKDIR /app

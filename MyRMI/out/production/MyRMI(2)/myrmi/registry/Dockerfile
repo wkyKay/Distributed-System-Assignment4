@@ -7,7 +7,8 @@ FROM openjdk:8-jdk-alpine
 WORKDIR /app
 
 # Assuming your Dockerfile is in the root directory of your project:
-COPY . .
+COPY ./src/main/java/myrmi/registry /app/registry
+COPY ./src/main/java/myrmi/demo/demo /app/demo/demo
 
 # Expose the RMI registry port
 EXPOSE 8899

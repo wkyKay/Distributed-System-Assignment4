@@ -28,7 +28,6 @@ public class RegistryImpl implements Registry {
     public Remote lookup(String name) throws RemoteException, NotBoundException {
         System.out.printf("RegistryImpl: lookup(%s)\n", name);
         //TODO: implement method here
-        System.out.println(bindings);
         return bindings.get(name);
     }
 
@@ -51,26 +50,11 @@ public class RegistryImpl implements Registry {
         System.out.printf("RegistryImpl: rebind(%s)\n", name);
         //TODO: implement method here
         bindings.put(name, obj);
-        System.out.println(bindings);
     }
 
     public String[] list() throws RemoteException {
         //TODO: implement method here
         return bindings.keySet().toArray(new String[0]);
-
-    }
-
-    public static void main(String args[]) {
-        final int regPort = (args.length >= 1) ? Integer.parseInt(args[0])
-                : Registry.REGISTRY_PORT;
-        RegistryImpl registry;
-        try {
-            registry = new RegistryImpl(regPort);
-        } catch (RemoteException e) {
-            System.exit(1);
-        }
-
-        System.out.printf("RMI Registry is listening on port %d\n", regPort);
 
     }
 }

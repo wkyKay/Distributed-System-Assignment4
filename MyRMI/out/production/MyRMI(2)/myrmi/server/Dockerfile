@@ -6,7 +6,8 @@ COPY /path/to/server/classes /app
 # If there are any resource files like properties files, copy them as well
 # COPY /path/to/resources /app/resources
 
-COPY . .
+COPY ./src/main/java/myrmi/server /app/server
+COPY ./src/main/java/myrmi/demo/demo /app/demo/demo
 # Set the working directory
 WORKDIR /app
 

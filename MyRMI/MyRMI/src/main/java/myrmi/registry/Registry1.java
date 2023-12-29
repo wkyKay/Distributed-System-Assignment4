@@ -1,9 +1,9 @@
-package myrmi.demo.demo;
+package myrmi.registry;
 
 import myrmi.exception.RemoteException;
 import myrmi.registry.LocateRegistry;
 
-public class Registry {
+public class Registry1 {
     public static void main(String args[]) {
         try {
             LocateRegistry.createRegistry("0.0.0.0");
