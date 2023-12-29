@@ -1,4 +1,4 @@
-package myrmi.demo.demo;
+package myrmi.demo;
 
 import myrmi.registry.LocateRegistry;
 import myrmi.registry.Registry;

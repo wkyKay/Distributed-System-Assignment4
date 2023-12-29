@@ -1,10 +1,9 @@
 package myrmi.server;
 
-import myrmi.demo.demo.Payment;
-import myrmi.demo.demo.PaymentImpl;
+import myrmi.demo.Payment;
+import myrmi.demo.PaymentImpl;
 import myrmi.registry.LocateRegistry;
 import myrmi.registry.Registry;
-import myrmi.server.UnicastRemoteObject;
 
 public class Server {
 	

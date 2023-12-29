@@ -1,4 +1,4 @@
-package myrmi.demo.demo;
+package myrmi.demo;
 
 import myrmi.exception.RemoteException;
 

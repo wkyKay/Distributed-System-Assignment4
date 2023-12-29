@@ -2,7 +2,7 @@ package myrmi.server;
 
 import myrmi.Remote;
 import myrmi.client.RemoteCal;
-import myrmi.demo.demo.Payment;
+import myrmi.demo.Payment;
 import myrmi.registry.Registry;
 
 import java.lang.reflect.Proxy;
