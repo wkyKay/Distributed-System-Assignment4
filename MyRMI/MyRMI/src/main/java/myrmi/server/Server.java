@@ -14,7 +14,7 @@ public class Server {
 		try {
 			int serverPort = 3000;
 			String registryHost = "0.0.0.0";
-			String serverHost = "127.0.0.1";
+			String serverHost = "127.0.1.1";
 
 			if(args.length >= 1) {
 				if(args.length != 3) {

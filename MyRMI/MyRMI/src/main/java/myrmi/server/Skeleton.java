@@ -38,7 +38,6 @@ public class Skeleton extends Thread {
     public void run() {
         try {
             ServerSocket serverSocket = new ServerSocket(port, BACKLOG, java.net.InetAddress.getByName(host));
-            System.out.println(serverSocket);
 
             while (true) {
                 Socket clientSocket = serverSocket.accept();

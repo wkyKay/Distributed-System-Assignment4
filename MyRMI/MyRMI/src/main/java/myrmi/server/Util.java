@@ -17,7 +17,7 @@ public class Util {
             return (Remote) Proxy.newProxyInstance(RemoteCal.class.getClassLoader(), new Class<?>[]{RemoteCal.class}, invocationHandler);
         }else if(ref.getInterfaceName().equals("myrmi.registry.Registry")){
             return (Registry) Proxy.newProxyInstance(Registry.class.getClassLoader(), new Class<?>[]{Registry.class}, invocationHandler);
-        }else if (ref.getInterfaceName().equals("myrmi.demo.demo.Payment")){
+        }else if (ref.getInterfaceName().equals("myrmi.demo.Payment")){
             return (Payment) Proxy.newProxyInstance(Payment.class.getClassLoader(), new Class<?>[]{Payment.class}, invocationHandler);
         }else
             return null;
