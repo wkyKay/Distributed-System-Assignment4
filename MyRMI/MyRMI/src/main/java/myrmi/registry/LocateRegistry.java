@@ -2,13 +2,14 @@ package myrmi.registry;
 
 import myrmi.Remote;
 import myrmi.exception.RemoteException;
+import myrmi.server.StubInvocationHandler;
 
 import java.lang.reflect.Proxy;
 
 public class LocateRegistry {
 
     public static Registry getRegistry() {
-        return getRegistry("0.0.0.0", Registry.REGISTRY_PORT);
+        return getRegistry("127.0.2.1", Registry.REGISTRY_PORT);
     }
 
     /**
@@ -25,13 +26,13 @@ public class LocateRegistry {
                 host = "";
             }
         }
-        Remote stub = (Remote) Proxy.newProxyInstance(Registry.class.getClassLoader(), new Class<?>[]{Registry.class}, new RegistryStubInvocationHandler(host, port));
+        Remote stub = (Remote) Proxy.newProxyInstance(Registry.class.getClassLoader(), new Class<?>[]{Registry.class}, new StubInvocationHandler(host, port, 0));
 
         return (Registry) stub;
     }
 
     public static Registry getRegistry(String host) {
-        Remote stub = (Remote) Proxy.newProxyInstance(Registry.class.getClassLoader(), new Class<?>[]{Registry.class}, new RegistryStubInvocationHandler(host, Registry.REGISTRY_PORT));
+        Remote stub = (Remote) Proxy.newProxyInstance(Registry.class.getClassLoader(), new Class<?>[]{Registry.class}, new StubInvocationHandler(host, Registry.REGISTRY_PORT,0));
         return (Registry) stub;
     }
 
@@ -50,14 +51,14 @@ public class LocateRegistry {
         if (port == 0) {
             port = Registry.REGISTRY_PORT;
         }
-        Registry registry = new RegistryImpl(port);
+        Registry registry = new RegistryImpl("0.0.0.0", port);
         return (Registry) Proxy.newProxyInstance(Registry.class.getClassLoader(), new Class<?>[]{Registry.class}, new RegistryStubInvocationHandler("0.0.0.0", port));
     }
 
     public static Registry createRegistry(String host) throws RemoteException {
         //TODO: Notice here the registry can only bind to 127.0.0.1, can you extend that?
         int port = Registry.REGISTRY_PORT;
-        Registry registry = new RegistryImpl(port);
+        Registry registry = new RegistryImpl(host, port);
         return (Registry) Proxy.newProxyInstance(Registry.class.getClassLoader(), new Class<?>[]{Registry.class}, new RegistryStubInvocationHandler(host, port));
     }
 

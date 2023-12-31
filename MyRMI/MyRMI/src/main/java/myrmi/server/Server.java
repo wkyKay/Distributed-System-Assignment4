@@ -13,7 +13,7 @@ public class Server {
 		//Usage: java demo.Server <registry host> <server host> <server port>
 		try {
 			int serverPort = 3000;
-			String registryHost = "0.0.0.0";
+			String registryHost = "127.0.2.1";
 			String serverHost = "127.0.1.1";
 
 			if(args.length >= 1) {

@@ -19,8 +19,8 @@ public class RegistryImpl implements Registry {
      * Construct a new RegistryImpl
      * and create a skeleton on given port
      **/
-    public RegistryImpl(int port) throws RemoteException {
-        Skeleton skeleton = new Skeleton(this, "0.0.0.0", port, 0);
+    public RegistryImpl(String host, int port) throws RemoteException {
+        Skeleton skeleton = new Skeleton(this, host, port, 0);
         skeleton.start();
     }
 
@@ -47,7 +47,6 @@ public class RegistryImpl implements Registry {
     }
 
     public void rebind(String name, Remote obj) throws RemoteException {
-        System.out.printf("RegistryImpl: rebind(%s)\n", name);
         //TODO: implement method here
         bindings.put(name, obj);
     }

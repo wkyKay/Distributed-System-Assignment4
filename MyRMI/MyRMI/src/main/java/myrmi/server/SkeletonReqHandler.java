@@ -38,6 +38,7 @@ public class SkeletonReqHandler extends Thread {
             Object[] args = (Object[]) in.readObject();
 
             Method method = obj.getClass().getMethod(methodName, argTypes);
+            System.out.println(methodName + " invoked");
             Object result = method.invoke(obj, args);
 
             ObjectOutputStream out = new ObjectOutputStream(socket.getOutputStream());

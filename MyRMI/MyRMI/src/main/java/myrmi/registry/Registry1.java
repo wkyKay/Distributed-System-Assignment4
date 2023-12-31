@@ -6,7 +6,7 @@ import myrmi.registry.LocateRegistry;
 public class Registry1 {
     public static void main(String args[]) {
         try {
-            LocateRegistry.createRegistry("0.0.0.0");
+            LocateRegistry.createRegistry("127.0.2.1");
         } catch (RemoteException e) {
             e.printStackTrace();
             System.out.println(e.getMessage());
